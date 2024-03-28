@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="TipTime"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="Title"/>
+               
+
+            <Label
+                Text="Calculadora de Gorgetas"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Entry
+                
+                
+                ></Entry>
+
+            <Label
+                Text="Gorgeta: "
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.Description="Exibe o valor da gorgeta" />
+            <Label
+                Text="Total:  "
+                Style="{StaticResource SubHeadline}"
+                 SemanticProperties.Description="Exibe o valor total da compra" />
+            
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="FifteenPercent_Btn"
+                    Text="15%" 
+                    SemanticProperties.Hint="Seta a porcentagem da gorgeta em 15% do valor total"
+                   
+                    HorizontalOptions="Fill" />
+                <Button
+                    x:Name="ThirtyPercent_Btn"
+                    Text="30%" 
+                    SemanticProperties.Hint="Seta a porcentagem da gorgeta em 30% do valor total"
+                   
+                    HorizontalOptions="Fill" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
