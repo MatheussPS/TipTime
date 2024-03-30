@@ -13,40 +13,114 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="Title"/>
-               
+
 
             <Label
                 Text="Calculadora de Gorgetas"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
-            <Entry
-                
-                
+
+
+            <HorizontalStackLayout>
+                <Label
+                    Text="Valor: "
+                    FontSize="25"
+                ></Label>
+                <Entry x:Name="quantiaEntry"
+                    HeightRequest="1"
+                    Placeholder="R$ 0,00"
+                    PlaceholderColor="#000"
+                    TextChanged="quantiaEntry_TextChanged"   
                 ></Entry>
 
-            <Label
-                Text="Gorgeta: "
+            </HorizontalStackLayout>
+
+            <Label x:Name="gorjLabel"
+                Text="Gorgeta: R$ 0,00"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.Description="Exibe o valor da gorgeta" />
-            <Label
-                Text="Total:  "
+                SemanticProperties.Description="Exibe o valor da gorgeta"
+                HorizontalOptions="Start"
+                FontSize="25"
+                />
+            <Label x:Name="Totals"
+                Text="Total:  R$ 0,00"
                 Style="{StaticResource SubHeadline}"
-                 SemanticProperties.Description="Exibe o valor total da compra" />
-            
-            <HorizontalStackLayout>
+                SemanticProperties.Description="Exibe o valor total da compra" 
+                HorizontalOptions="Start"
+                FontSize="25"/>
+
+
+
+
+            <Label x:Name="Percent_Vaue"
+                Text="Porcentagem da Gorgeta: 0%"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.Description="Exibe o valor da porcentagem" 
+                HorizontalOptions="Start"
+                FontSize="25"/>
+
+            <Slider x:Name="SliderGorgeta"
+                Minimum="0"
+                Maximum="100"
+                ThumbColor="Aqua"
+                MinimumTrackColor="Aqua"
+                BackgroundColor="LightGrey"
+                ValueChanged="SliderGorgeta_ValueChanged"
+                >
+
+            </Slider>
+
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand"
+                 Spacing="25"
+                >
                 <Button
-                    x:Name="FifteenPercent_Btn"
+                    x:Name="fifteen_Btn"
                     Text="15%" 
                     SemanticProperties.Hint="Seta a porcentagem da gorgeta em 15% do valor total"
-                   
-                    HorizontalOptions="Fill" />
+                    BackgroundColor="LightGray"
+                   Clicked="Set_fifteenPercentClicked"
+                    HorizontalOptions="Fill" 
+                    class="btn"/>
                 <Button
-                    x:Name="ThirtyPercent_Btn"
+                    x:Name="thirty_Btn"
                     Text="30%" 
                     SemanticProperties.Hint="Seta a porcentagem da gorgeta em 30% do valor total"
+                    Background="LightGray"
+                    HorizontalOptions="Fill" 
+                    Clicked="Set_thirtyPercentClicked"
+                    class="btn"
                    
-                    HorizontalOptions="Fill" />
+                    />
             </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand"
+                Spacing="25"
+                >
+                
+            
+                <Button
+                     x:Name="ArrendondarBtn"
+                        Text="Arredondar para Baixo" 
+                        SemanticProperties.Hint="Arredonda a porcentagem da gorgeta para baixo, depois calcula o valor da gorgeta"
+                        BackgroundColor="#00F"
+                        HorizontalOptions="Fill" 
+                        Clicked="Arrendondar_Btn_Clicked"
+                   
+                />
+
+                <Button
+                    x:Name="ArrendondarCimaBtn"
+                    Text="Arredondar para Cima" 
+                    SemanticProperties.Hint="Arredonda a porcentagem da gorgeta para baixo, depois calcula o valor da gorgeta"
+                    BackgroundColor="#00F"
+                    HorizontalOptions="Fill" 
+                    Clicked="ArrendondarCima_Btn_Clicked"
+       
+                />
+            </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 
