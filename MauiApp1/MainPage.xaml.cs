@@ -49,24 +49,32 @@
 
         private void Arrendondar_Btn_Clicked(object sender, EventArgs e)
         {
-            double valor = Convert.ToSingle(quantiaEntry.Text);
-            double gorj = (double)(valor * (SliderGorgeta.Value / 100));
-        
+            double valorAntes = Convert.ToSingle(quantiaEntry.Text);
+            double gorj = (double)(valorAntes * (SliderGorgeta.Value / 100));
+            double total = Math.Round(gorj + valorAntes, 0);
 
-            
-            Totals.Text = $"Total arredondado:  R$ {Math.Round(gorj + valor - 0.55)}";
+
+            if (total > gorj + valorAntes) {
+                total--;
+            }
+
+            Totals.Text = $"Total arredondado:  R$ {total}";
 
 
         }
 
         private void ArrendondarCima_Btn_Clicked(object sender, EventArgs e)
         {
-            double valor = Convert.ToSingle(quantiaEntry.Text);
-            double gorj = (double)(valor * (SliderGorgeta.Value / 100));
+            double valorAntes = Convert.ToSingle(quantiaEntry.Text);
+            double gorj = (double)(valorAntes * (SliderGorgeta.Value / 100));
+            double total = Math.Round(gorj + valorAntes, 0);
 
+            if (total < gorj + valorAntes)
+            {
+                total++;
+            }
 
-
-            Totals.Text = $"Total arredondado:  R$ {Math.Round(gorj + valor + 0.55)}";
+            Totals.Text = $"Total arredondado:  R$ {total}";
 
 
         }

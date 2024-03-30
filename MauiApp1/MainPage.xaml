@@ -42,6 +42,7 @@
                 HorizontalOptions="Start"
                 FontSize="25"
                 />
+            
             <Label x:Name="Totals"
                 Text="Total:  R$ 0,00"
                 Style="{StaticResource SubHeadline}"
