@@ -30,7 +30,7 @@
                     HeightRequest="1"
                     Placeholder="R$ 0,00"
                     PlaceholderColor="#000"
-                    TextChanged="quantiaEntry_TextChanged"   
+                    TextChanged="QuantiaEntry_TextChanged"   
                 ></Entry>
 
             </HorizontalStackLayout>

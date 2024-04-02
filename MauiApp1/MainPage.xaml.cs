@@ -12,13 +12,24 @@
 
         private void SliderGorgeta_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            Percent_Vaue.Text = $"Porcentagem da Gorgeta: {((float)SliderGorgeta.Value)}%";
-            float valor = Convert.ToSingle(quantiaEntry.Text);
-            float gorj = (float)(valor * (SliderGorgeta.Value / 100));
-            double tGorj = Math.Round(gorj, 2);
+            try
+            {
+                Percent_Vaue.Text = $"Porcentagem da Gorgeta: {((float)SliderGorgeta.Value)}%";
+                float valor = Convert.ToSingle(quantiaEntry.Text);
+                float gorj = (float)(valor * (SliderGorgeta.Value / 100));
+                double tGorj = Math.Round(gorj, 2);
 
-            gorjLabel.Text = $"Gorgeta: R${tGorj}";
-            Totals.Text = $"Total:  R$ {Math.Round(tGorj + valor, 2)}";
+                gorjLabel.Text = $"Gorgeta: R${tGorj}";
+                Totals.Text = $"Total:  R$ {Math.Round(tGorj + valor, 2)}";
+            }
+            catch
+            {
+                float i = 0;
+                Percent_Vaue.Text = $"Porcentagem da Gorgeta: {i}%";
+                gorjLabel.Text = $"Gorgeta: R${i}";
+                Totals.Text = $"Total:  R$ {i}";
+
+            }
         }
 
 
@@ -27,7 +38,6 @@
             
             SliderGorgeta.Value = 15;
             double valor = Convert.ToSingle(quantiaEntry.Text);
-            double formatValor = Math.Round(valor, 2);
             double gorj = (double)(valor * (SliderGorgeta.Value / 100));
             double tGorj = Math.Round(gorj, 2);
 
@@ -79,15 +89,27 @@
 
         }
 
-        private void quantiaEntry_TextChanged(object sender, TextChangedEventArgs e)
+        private void QuantiaEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Percent_Vaue.Text = $"Porcentagem da Gorgeta: {((float)SliderGorgeta.Value)}%";
-            float valor = Convert.ToSingle(quantiaEntry.Text);
-            float gorj = (float)(valor * (SliderGorgeta.Value / 100));
-            double tGorj = Math.Round(gorj, 2);
+            try 
+            { 
+                Percent_Vaue.Text = $"Porcentagem da Gorgeta: {((float)SliderGorgeta.Value)}%";
+                float valor = Convert.ToSingle(quantiaEntry.Text);
+                float gorj = (float)(valor * (SliderGorgeta.Value / 100));
+                double tGorj = Math.Round(gorj, 2);
 
-            gorjLabel.Text = $"Gorgeta: R${tGorj}";
-            Totals.Text = $"Total:  R$ {Math.Round(tGorj + valor, 2)}";
+                gorjLabel.Text = $"Gorgeta: R${tGorj}";
+                Totals.Text = $"Total:  R$ {Math.Round(tGorj + valor, 2)}";
+            }
+            catch 
+            {
+                float i = 0;
+                Percent_Vaue.Text = $"Porcentagem da Gorgeta: {i}%";
+                gorjLabel.Text = $"Gorgeta: R${i}";
+                Totals.Text = $"Total:  R$ {i}";
+
+            }
+            
         }
     }
 
