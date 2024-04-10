@@ -80,7 +80,7 @@
                     Text="15%" 
                     SemanticProperties.Hint="Seta a porcentagem da gorgeta em 15% do valor total"
                     BackgroundColor="LightGray"
-                   Clicked="Set_fifteenPercentClicked"
+                    Clicked="Set_PercentClicked"
                     HorizontalOptions="Fill" 
                     class="btn"/>
                 <Button
@@ -89,7 +89,7 @@
                     SemanticProperties.Hint="Seta a porcentagem da gorgeta em 30% do valor total"
                     Background="LightGray"
                     HorizontalOptions="Fill" 
-                    Clicked="Set_thirtyPercentClicked"
+                    Clicked="Set_PercentClicked"
                     class="btn"
                    
                     />
@@ -114,10 +114,10 @@
                 <Button
                     x:Name="ArrendondarCimaBtn"
                     Text="Arredondar para Cima" 
-                    SemanticProperties.Hint="Arredonda a porcentagem da gorgeta para baixo, depois calcula o valor da gorgeta"
+                    SemanticProperties.Hint="Arredonda a porcentagem da gorgeta para cima, depois calcula o valor da gorgeta"
                     BackgroundColor="#00F"
                     HorizontalOptions="Fill" 
-                    Clicked="ArrendondarCima_Btn_Clicked"
+                    Clicked="Arrendondar_Btn_Clicked"
        
                 />
             </HorizontalStackLayout>
